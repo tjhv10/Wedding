@@ -113,7 +113,7 @@ def match_names(names_excel, names_vcf):
 def write_excel(matched_data, output_file):
     workbook = openpyxl.Workbook()
     sheet = workbook.active
-    sheet.append(["Name", "Matched Name", "Phone", "Similarity Percentage"])
+    sheet.append(["Name","Phone","Similarity Percentage", "Matched Name" ])
     for name, (matched_name, phone, similarity) in matched_data.items():
         sheet.append([name, matched_name, phone, similarity])
     workbook.save(output_file)

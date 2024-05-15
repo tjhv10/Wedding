@@ -72,7 +72,7 @@ def read_excel(file_path):
     workbook = openpyxl.load_workbook(file_path)
     sheet = workbook.active
     headers = [cell.value for cell in sheet[1]]  # Get column headers
-    name_col = headers.index('name') + 1
+    name_col = headers.index('nameR') + 1
     for row in sheet.iter_rows(min_row=2, values_only=True):
         name = row[name_col - 1]  # Adjust index to 0-based
         data.append(name)
@@ -121,7 +121,7 @@ def write_excel(matched_data, output_file):
 
 # Paths to input and output files
 excel_file = 'wedd.xlsx'
-vcf_file = 'contactsA.vcf'
+vcf_file = 'contactsR.vcf'
 output_file = 'output.xlsx'
 # translate_names(vcf_file)
 names_excel = read_excel(excel_file)
